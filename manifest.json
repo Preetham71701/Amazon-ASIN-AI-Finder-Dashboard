@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon ASIN AI Finder Dashboard",
+  "version": "1.0.0",
+  "description": "Find and organize Amazon ASINs into Premium, Best Sellers, Budget Smart Picks, and Unique buckets.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.amazon.com/*",
+    "https://amazon.com/*"
+  ],
+  "action": {
+    "default_title": "Amazon ASIN AI Finder Dashboard",
+    "default_icon": "icon.jpg"
+  },
+  "icons": {
+    "16": "icon.jpg",
+    "32": "icon.jpg",
+    "48": "icon.jpg",
+    "128": "icon.jpg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

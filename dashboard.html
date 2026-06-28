@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Amazon ASIN AI Finder Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand-area">
+        <img src="icon.jpg" alt="Amazon ASIN AI Finder Dashboard Logo" class="logo-icon" />
+
+        <div>
+          <h1>Amazon ASIN AI Finder Dashboard</h1>
+          <p>Find Premium, Best Sellers, Budget Smart Picks and Unique ASINs using AI-assisted analysis.</p>
+        </div>
+      </div>
+
+      <div class="status-pill" id="statusPill">
+        Status: Idle
+      </div>
+    </header>
+
+    <section class="control-panel">
+      <div class="field-row">
+        <div class="form-group">
+          <label for="categoryKeyword">Category Keyword</label>
+          <input
+            type="text"
+            id="categoryKeyword"
+            placeholder="Example: Headphones"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="brandsToAvoid">Brands to Avoid</label>
+          <input
+            type="text"
+            id="brandsToAvoid"
+            placeholder="Example: Apple, Samsung"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group api-key-group">
+          <label for="aiApiKey">AI API Key</label>
+          <div class="api-key-wrapper">
+            <input
+              type="password"
+              id="aiApiKey"
+              placeholder="Enter your AI API key"
+              autocomplete="off"
+            />
+            <button type="button" id="toggleApiKeyBtn" class="secondary-btn">
+              Show
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <label class="remember-row">
+          <input type="checkbox" id="rememberApiKey" />
+          Remember API key on this browser
+        </label>
+
+        <div class="buttons">
+          <button type="button" id="startBtn" class="primary-btn">
+            Start
+          </button>
+
+          <button type="button" id="resetBtn" class="secondary-btn">
+            Reset
+          </button>
+
+          <button type="button" id="exportBtn" class="export-btn" disabled>
+            Export Excel
+          </button>
+        </div>
+      </div>
+
+      <div class="message" id="messageBox">
+        Waiting to start...
+      </div>
+    </section>
+
+    <section class="activity-panel">
+      <h3>Current Activity</h3>
+      <p id="activityText">No activity yet.</p>
+    </section>
+
+    <section class="bucket-grid">
+      <div class="bucket bucket-premium">
+        <div class="bucket-header">
+          <h2>Premium</h2>
+          <span>6 ASINs</span>
+        </div>
+        <div class="bucket-slots" id="premiumBucket"></div>
+      </div>
+
+      <div class="bucket bucket-best">
+        <div class="bucket-header">
+          <h2>Best Sellers</h2>
+          <span>12 ASINs</span>
+        </div>
+        <div class="bucket-slots" id="bestSellersBucket"></div>
+      </div>
+
+      <div class="bucket bucket-budget">
+        <div class="bucket-header">
+          <h2>Budget Smart Picks</h2>
+          <span>7 ASINs</span>
+        </div>
+        <div class="bucket-slots" id="budgetBucket"></div>
+      </div>
+
+      <div class="bucket bucket-unique">
+        <div class="bucket-header">
+          <h2>Unique</h2>
+          <span>5 ASINs</span>
+        </div>
+        <div class="bucket-slots" id="uniqueBucket"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
